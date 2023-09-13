@@ -1,2 +1,2 @@
-# web-260
+# WEB-260
 Website for CS260
