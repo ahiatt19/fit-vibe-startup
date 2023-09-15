@@ -24,3 +24,9 @@ HTML - Welcome & login page
 CSS - photo of fitness, colors and logo
   
 JavaScript - Create logins and etc
+
+Service - saveScores, getWeather
+
+Database - save stuff(logins)
+
+SHOULD ONLY BE ABOUT 100 LINES PER peice
