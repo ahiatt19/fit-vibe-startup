@@ -40,3 +40,15 @@ I am going to use the required technologies in the following ways.
 - **Login** - Register and login users. Credentials securely stored in database. Can't create an entry unless authenticated.
 - **WebSocket** - As each user submits an entry, their entry is broadcasted to all other users.
 - **React** - Application ported to use the React web framework.
+
+## HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- **HTML pages** - Four HTML pages that represent the ability to login, create a new entry, view a leaderboard, and view past entries.
+- **Links** - The login page automatically links to the new entry page. The new entry page links to the past entry page. And you can access the Leaderboard thorugh the links at the top of the page.
+- **Entry** - The create new entry page allows users to send their entry info to the database.  The test later seen in the Leaderboard and Past Entried has imaginary inputs therefore fake entries, to show what it may look like in the future.  
+- **Images** - There are included pictures at the bottom of each html page.
+- **Login** - Input box and submit button for login.
+- **Database** - The database holds username and passwords. It also holds each users entries.
+- **WebSocket** - The submission of an entry results in real time addition to the leaderboard and the users personal past entry page
