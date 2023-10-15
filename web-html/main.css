@@ -68,3 +68,13 @@ body {
     }
   }
   
+
+  table:hover { opacity: .5 }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    }
+
+    tr:hover {background-color: coral;}
