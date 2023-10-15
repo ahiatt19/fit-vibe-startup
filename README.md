@@ -52,3 +52,15 @@ For this deliverable I built out the structure of my application using HTML.
 - **Login** - Input box and submit button for login.
 - **Database** - The database holds username and passwords. It also holds each users entries.
 - **WebSocket** - The submission of an entry results in real time addition to the leaderboard and the users personal past entry page
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** 
+- **Navagational elements** - I changed the color of the text, and got rid of the underlines aswell.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application Images** - There is one included picture at the bottom of the past entries page.
+- **Aplacation elements** - I used contrasting colors and stayed on a fun theme.
+- **Application text content** - Consistent fonts.
+
