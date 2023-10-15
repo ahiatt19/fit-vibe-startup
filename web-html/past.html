@@ -5,33 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Past Entries</title>
     <link rel="icon" href="browser_icon.ico" />
-  </head>
-  <body>
-    <header>
-      <h1>FitVibe<sup>&reg;</sup></h1>
+    
+    <link rel="stylesheet" href="main.css" />
 
-      <nav>
-        <menu>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="new.html">New Tracking</a></li>
-          <li><a href="leaderboard.html">Leaderboard</a></li>
-          <li><a href="past.html">Past Tracking</a></li>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+  </head>
+  <body class="bg-dark text-light">
+    <header class="container-fluid">
+      
+
+      <nav class="navbar fixed-top navbar-dark">
+        <a class="navbar-brand" href="#"style="color:#9400d3;">FitVibe<sup>&reg;</sup></a>
+        <menu class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="new.html">New Tracking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="leaderboard.html">Leaderboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="past.html">Past Tracking</a>
+          </li>
         </menu>
       </nav>
 
       <hr />
     </header>
 
-    <main>
-      <div class="users">
-        <span class="username">Username</span>
-      </div>
-      <h2>Past Workouts</h2>
+    <main class="container-fluid bg-secondary text-center">
       
-      <table>
-        <thead>
+      <div class="users">
+        <span style="color:#32174d;" class="username">Username</span>
+      </div>
+      <h2 style="color:#df73ff">Past Workouts</h2>
+      
+      <table class="table table-warning table-striped-columns">
+        <thead class="table-dark">
           <tr>
-            <th>Date & Time</th>
+            <th>Date</th>
+            <th>Time</th>
             <th>Calories</th>
             <th>Workout</th>
             <th>Notes</th>
@@ -39,38 +60,44 @@
         </thead>
         <tbody>
           <tr>
-            <td>9/27/23 3:00 pm</td>
+            <td>9/27/23</td>
+            <td>3:00 pm</td>
             <td>223</td>
             <td>cardio</td>
             <td>ran 3 miles!</td>
           </tr>
           <tr>
-            <td>9/25/23 10:00 am</td>
+            <td>9/25/23</td>
+            <td>10:00 am</td>
             <td>390</td>
             <td>pilates</td>
             <td>n/a</td>
           </tr>
           <tr>
-            <td>9/20/23 2:25 pm</td>
+            <td>9/20/23</td>
+            <td>2:25 pm</td>
             <td>79</td>
             <td>yoga</td>
             <td>hit a bench pr</td>
           </tr>
           <tr>
-            <td>9/18/23 4:45 pm</td>
+            <td>9/18/23</td>
+            <td>4:45 pm</td>
             <td>180</td>
             <td>crossfit</td>
             <td>n/a</td>
           </tr>
         </tbody>
       </table>
+      
     </main>
 
     <footer>
-      <hr />
-      <span class="text-reset">Author Name(s)</span>
-      <br />
-      <a href="https://github.com/ahiatt19/fit-vibe-startup/tree/main/web-html">GitHub</a>
+      <div class="container-fluid">
+        <span class="text-reset">Author Name(s)</span>
+        <a class="text-reset" style="color:#e0b0ff" href="https://github.com/ahiatt19/fit-vibe-startup/tree/main/web-html">GitHub</a>
+      </div>
     </footer>
+    <!--<img alt="mountain landscape" src="water.jpg" width="500" height="300"/>-->
   </body>
 </html>

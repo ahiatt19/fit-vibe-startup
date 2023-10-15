@@ -5,49 +5,61 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitVibe</title>
-    <link rel="icon" href="browser_icon.ico" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1 style="color:#9400d3;">FitVibe<sup>&reg;</sup></h1>
+    <link rel="icon" href="browser_icon.ico"/>
 
+    <link rel="stylesheet" href="main.css"/>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-white text-dark">
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header class="container-fluid">
       <!-- Navigation elements -->
-      <nav>
+      <nav class="navbar fixed-top navbar-dark">
+        <a class="navbar-brand" href="#" style="color:#b32dd7;">FitVibe<sup>&reg;</sup></a>
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-        <menu>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="new.html">New Tracking</a></li>
-          <li><a href="leaderboard.html">Leaderboard</a></li>
-          <li><a href="past.html">Past Tracking</a></li>
+        <menu class="navbar-nav">
+          <li class="nav-item">
+            <a style="color:#b159ca;" class="nav-link active" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a style="color:#b159ca;" class="nav-link active" href="new.html">New Tracking</a>
+          </li>
+          <li class="nav-item">
+            <a style="color:#b159ca;" class="nav-link active" href="leaderboard.html">Leaderboard</a>
+          </li>
+          <li class="nav-item">
+            <a style="color:#b159ca;" class="nav-link active" href="past.html">Past Tracking</a>
+          </li>
         </menu>
       </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
     </header>
 
-    <main>
-      <h2>Welcome</h2>
-      <p>Login here to track: </p>
-      <form method="get" action="new.html">
-        
-        <label for="username">Username: </label>
-        <input type="text" id="username" placeholder="Enter Username here" />
-        
-        <label for="password">Password: </label>
-        <input type="text" id="password" placeholder="Enter Password here" />
-
-        <button type="submit">Login</button>
-      </form>
+    <main class="container-fluid bg-brown text-center">
+      <div>
+        <h1 style="color:#b159ca;">Welcome</h1>
+        <p style="color:#deb2eb;">Login here to track: </p>
+        <form method="get" action="new.html">
+          <label for="username" style="color:#deb2eb;">Username: </label>
+          <input type="text" id="username" placeholder="Enter Username here" />
+          <label for="password" style="color:#deb2eb;">Password: </label>
+          <input type="text" id="password" placeholder="Enter Password here" />
+          <button style="color:#deb2eb;" type="submit" class="btn btn-primary bg-dark" >Login</button>
+        </form>
+        <!--<img alt="mountain landscape" src="water.jpg" width="500" height="300"/>-->
+      </div>
     </main>
 
-    <footer>
-      <hr />
-      <span class="text-reset">Author Name</span>
-      <br />
-      <a href="https://github.com/ahiatt19/fit-vibe-startup/tree/main/web-html">GitHub</a>
+    <footer class="bg-white text-dark-50">
+      <div class="container-fluid" style="color:#df73ff;">
+        <span class="text-reset">Author Name</span>
+        <a class="text-reset" style="color:#e0b0ff" href="https://github.com/ahiatt19/fit-vibe-startup/tree/main/web-html">GitHub</a>
+      </div>
     </footer>
   </body>
 </html>
