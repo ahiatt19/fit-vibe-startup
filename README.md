@@ -1,6 +1,6 @@
 # FitVibe 
 ## Description deliverable
-### Elvator pitch
+### Elevator pitch
 For those of you in the fitness world, have you ever wanted to have a place where you could compete with others and become motivated to workout more?  FitVibe allows users to compete with others on the website through calories burned during your workout session.  With just a few clicks, you are able to see what type of workouts other users are doing, their calories burned, and the leaderboard for the day.  You also are able to track your own progress with the personal past entries  log. Come to compete, track and get motivated for your workouts at FitVibe. 
 
 FitVibeU1.jpg
@@ -52,3 +52,15 @@ For this deliverable I built out the structure of my application using HTML.
 - **Login** - Input box and submit button for login.
 - **Database** - The database holds username and passwords. It also holds each users entries.
 - **WebSocket** - The submission of an entry results in real time addition to the leaderboard and the users personal past entry page
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** 
+- **Navagational elements** - I changed the color of the text, and got rid of the underlines aswell.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application Images** - There is one included picture at the bottom of the past entries page.
+- **Aplacation elements** - I used contrasting colors and stayed on a fun theme.
+- **Application text content** - Consistent fonts.
+
