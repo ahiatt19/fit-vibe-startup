@@ -43,4 +43,4 @@
 - - look at DNS and ROUTE 53 (maybe AWS)
 - Port 443, 80, 22 is reserved for which protocol?
 - What will the following code using Promises output when executed?
-- - Promise has a result or a reject / has .then ==> executed no matter what / .catch ==> executed if there is an error and .finally ==> executued at the end.
+- - Promise has a resolve or a reject / has .then ==> executed no matter what / .catch ==> executed if there is an error and .finally ==> executued at the end to run console logs
