@@ -7,6 +7,8 @@
     <title>FitVibe</title>
     <link rel="icon" href="browser_icon.ico"/>
 
+
+    <script src="login.js"></script>
     <link rel="stylesheet" href="main.css"/>
 
     <link
@@ -48,14 +50,19 @@
         <form method="get" action="new.html">
           <ul>
             <label for="username" style="color:#deb2eb;">Username: </label>
-            <input type="text" id="username" placeholder="Enter Username here" />
+            <input type="text" id="username" placeholder="Enter Username here" required/>
           </ul>
           <ul>
             <label for="password" style="color:#deb2eb;">Password: </label>
-            <input type="text" id="password" placeholder="Enter Password here" />
+            <input type="text" id="password" placeholder="Enter Password here" required/>
           </ul>
           
           <button style="color:#b159ca;" type="submit" class="btn btn-outline-dark" >Login</button>
+          <ul>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+          </ul>
           
         </form>
         <!--<img alt="mountain landscape" src="water.jpg" width="500" height="300"/>-->
