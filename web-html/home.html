@@ -47,7 +47,7 @@
       <div>
         <h1 style="color:#b159ca;">Welcome</h1>
         <p style="color:#deb2eb;">Login to Track: </p>
-        <form method="get" action="new.html">
+        <div>
           <ul>
             <label for="username" style="color:#deb2eb;">Username: </label>
             <input type="text" id="username" placeholder="Enter Username here" required/>
@@ -57,14 +57,13 @@
             <input type="text" id="password" placeholder="Enter Password here" required/>
           </ul>
           
-          <button style="color:#b159ca;" type="submit" class="btn btn-outline-dark" >Login</button>
+          <button style="color:#b159ca;" type="submit" class="btn btn-outline-dark" onclick="login()">Login</button>
           <ul>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
           </ul>
-          
-        </form>
+        </div>
         <!--<img alt="mountain landscape" src="water.jpg" width="500" height="300"/>-->
       </div>
     </main>
