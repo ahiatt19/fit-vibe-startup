@@ -10,7 +10,7 @@ function saveForm() {
     localStorage.setItem("cals", caloriesE1.value);
     const wrkoutE1 = document.querySelector("#wrkout");
     localStorage.setItem("wrkout", wrkoutE1.value);
-    const noteE1 = document.querySelector("note");
+    const noteE1 = document.querySelector("#note");
     localStorage.setItem("note", noteE1.value)
     window.location.href = "past.html"
 }
