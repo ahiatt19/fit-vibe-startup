@@ -40,9 +40,9 @@
     </header>
 
 
-    <div class="cur-user" style="color:#b159ca;">
+    <div class="users" style="color:#b159ca;">
       User:
-      <span class="username" ></span>
+      <span class="user-name"></span>
     </div>
 
     <main class="container-fluid text-center">
@@ -55,15 +55,14 @@
       <table class="table table-warning table-striped-columns">
         <thead class="table-light">
           <tr>
-            <th>Date</th>
-            <th>Time</th>
+            <th>Date & Time</th>
             <th>Calories</th>
             <th>Workout</th>
             <th>Notes</th>
           </tr>
         </thead>
-        <tbody class="table-light">
-          <tr>
+        <tbody id="entries"></tbody>
+          <!-- <tr>
             <td>9/27/23</td>
             <td>3:00 pm</td>
             <td>223</td>
@@ -91,7 +90,7 @@
             <td>crossfit</td>
             <td>n/a</td>
           </tr>
-        </tbody>
+        </tbody> -->
       </table>
       <img alt="mountain landscape" src="water.jpg" width="500" height="300"/>
     </main>
@@ -102,6 +101,7 @@
         <a class="text-reset" style="color:#e0b0ff" href="https://github.com/ahiatt19/fit-vibe-startup/tree/main/web-html">GitHub</a>
       </div>
     </footer>
-    
+
+    <script src="entries.js"></script>
   </body>
 </html>
