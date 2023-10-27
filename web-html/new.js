@@ -1,9 +1,13 @@
-//getUsername(); {
-    //return localStorage.getItem('username')
-//}
+const playerNameEl = document.querySelector('.user-name');
+playerNameEl.textContent = this.getUserName();
 
+
+function getUserName() {
+    return localStorage.getItem('username');
+  }
 
 function saveForm() {
+    //saves data to Local Storage
     const dateE1 = document.querySelector("#datetime");
     localStorage.setItem("datetime", dateE1.value);
     const caloriesE1 = document.querySelector("#cals");
