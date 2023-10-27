@@ -42,5 +42,27 @@
 - Can a DNS A record can point to an IP address or another A record.
 - - look at DNS and ROUTE 53 (maybe AWS)
 - Port 443, 80, 22 is reserved for which protocol?
+- - Ports 443 is HTTPS, 22 is SSH, 80 is HTTP
 - What will the following code using Promises output when executed?
 - - Promise has a resolve or a reject / has .then ==> executed no matter what / .catch ==> executed if there is an error and .finally ==> executued at the end to run console logs
+
+
+### NOTES 10/25
+- Start of Back end notes "Web Services 5.1"
+- you can look at the express server in node
+- you assigned one port per
+- we deploy to the publid server
+- using node.js we can still do console.log()
+- how we deploy
+- curl localhost <-- shortcut to current machine we are using
+- you cn also curl into the port and see the startup
+- javascript functions
+- - fetch grabs data and puts it into the dom
+  - two ways to do this (await or pass in the url)
+  - - good idea to throw url into google and look at it
+  - <pre> means preserve (dont change the text)</pre>
+- use network in inspect to debug the api connection
+- cookies help authenticate you, they can put it tracking cookies, they are a strategy to establish a session
+- "curl" to debug APIs use it a lot
+- - curl -v "url"
+  - 
