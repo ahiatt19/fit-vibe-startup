@@ -58,8 +58,9 @@ function updateEntries(userName, cals, wrkout, note, entries) {
 
   let found = false;
   for (const [i, prevEntry] of entries.entries()) {
-    if (newEntry.calories > prevEntry.calories) {
-      console.log(prevEntry)
+    if (+newEntry.calories > +prevEntry.calories) {
+      console.log(newEntry.calories)
+      console.log(prevEntry.calories)
       entries.splice(i, 0, newEntry);
       found = true;
       break;
