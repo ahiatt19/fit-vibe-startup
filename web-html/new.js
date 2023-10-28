@@ -15,7 +15,7 @@ function getUserName() {
 function saveForm() {
     //saves data to Local Storage
     const dateE1 = document.querySelector("#datetime");
-    localStorage.setItem("datetime", dateE1.value);
+    localStorage.setItem("datetime", dateE1.value.substring(0, 10));
     const caloriesE1 = document.querySelector("#cals");
     localStorage.setItem("cals", caloriesE1.value);
     const wrkoutE1 = document.querySelector("#wrkout");
