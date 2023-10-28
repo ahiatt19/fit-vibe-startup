@@ -70,7 +70,7 @@ For this deliverable I implemented by JavaScript so that the application works f
 
 - **Login** - when you enter a username and password it takes you to the form/ new entry page.
 - **Database** - Displays the leaderboard of entries based on the amount of calories burned from the local storage and the past entries from the local stoare based on date entered.
-- **WebSocket** - Going to implement this when we do Websocket with holding the entries of every user and the current users past entries. 
+- **WebSocket** - This will be implemented through the Leaderboard page when other users submit entries to it
 - **Application Logic** - The calories and dates entered determine where on the tables the entries end up.
 - **Application Picture** - One picture on the Past Entries page.
 
