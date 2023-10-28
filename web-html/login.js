@@ -1,13 +1,13 @@
 function loginError() {
     //some sort of alert here
-    console.log("no username")
+    console.log("must enter username")
 }
 
 function passwordError() {
-    console.log("no password")
+    console.log("must enter password")
 }
 
-// do this for password aswell
+
 
 function login() {
     const userE1 = document.querySelector('#username');

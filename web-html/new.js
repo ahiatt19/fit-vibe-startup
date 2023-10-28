@@ -7,10 +7,10 @@ function getUserName() {
   }
 
 
-function updateEntry(entry) {
-  const entryE1 = document.querySelector('#entry');
-  entryE1.textContent = entry;
-}
+//function updateEntry(entry) {
+  //const entryE1 = document.querySelector('#entry');
+  //entryE1.textContent = entry;
+//}
 
 function saveForm() {
     //saves data to Local Storage
@@ -30,23 +30,36 @@ function saveForm() {
     if (entriesText) {
       entries = JSON.parse(entriesText);
     }
-    
+
     entries = this.updateEntries(userName, caloriesE1.value, wrkoutE1.value, noteE1.value, entries);
     //console.log(entries)
-    localStorage.setItem('entries', JSON.stringify(entries));
+
+
+    user_e = [];
+    const user_eText = localStorage.getItem('user_e');
+    if (user_eText) {
+      user_e = JSON.parse(user_eText);
+    }
     
+    
+    
+    user_e = this.updateUser_e(userName, dateE1.value, caloriesE1.value, wrkoutE1.value, noteE1.value, user_e);
+
+    //console.log(entries)
+    localStorage.setItem('entries', JSON.stringify(entries));
+    localStorage.setItem('user_e', JSON.stringify(user_e))
 
     window.location.href = "leaderboard.html";
 }
 
 function updateEntries(userName, cals, wrkout, note, entries) {
   //const date = new Date().toLocaleDateString();
-  const newEntry = {name: userName, calories: cals, workout: wrkout, note: note};
+  const newEntry = { name: userName, calories: cals, workout: wrkout, note: note };
 
   let found = false;
   for (const [i, prevEntry] of entries.entries()) {
-    if (cals > prevEntry.cals) {
-      console.log(preEntry)
+    if (newEntry.calories > prevEntry.calories) {
+      console.log(prevEntry)
       entries.splice(i, 0, newEntry);
       found = true;
       break;
@@ -62,4 +75,26 @@ function updateEntries(userName, cals, wrkout, note, entries) {
   }
 
   return entries;
+}
+
+
+function updateUser_e(userName, datetime, cals, workout, note, user_e) {
+  const new_user_e = {username: userName, datetime: datetime, calories: cals, workout: workout, note: note};
+
+
+  let found = false;
+  for (const [i, prevEntry] of user_e.entries()) {
+    if (prevEntry.datetime > datetime) {
+      user_e.push(new_user_e);
+
+      
+      break;
+    }
+  }
+  //console.log(user_e)
+  if (!found) {
+    user_e.push(new_user_e);
+  }
+
+  return user_e;
 }
