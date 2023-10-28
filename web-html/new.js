@@ -43,7 +43,7 @@ function saveForm() {
     
     
     
-    user_e = this.updateUser_e(userName, dateE1.value, caloriesE1.value, wrkoutE1.value, noteE1.value, user_e);
+    user_e = this.updateUser_e(userName, dateE1.value.substring(0, 10), caloriesE1.value, wrkoutE1.value, noteE1.value, user_e);
 
     //console.log(entries)
     localStorage.setItem('entries', JSON.stringify(entries));
@@ -59,8 +59,8 @@ function updateEntries(userName, cals, wrkout, note, entries) {
   let found = false;
   for (const [i, prevEntry] of entries.entries()) {
     if (+newEntry.calories > +prevEntry.calories) {
-      console.log(newEntry.calories)
-      console.log(prevEntry.calories)
+      //console.log(newEntry.calories)
+      //console.log(prevEntry.calories)
       entries.splice(i, 0, newEntry);
       found = true;
       break;
@@ -85,10 +85,9 @@ function updateUser_e(userName, datetime, cals, workout, note, user_e) {
 
   let found = false;
   for (const [i, prevEntry] of user_e.entries()) {
-    if (prevEntry.datetime > datetime) {
-      user_e.push(new_user_e);
-
-      
+    if (prevEntry.datetime < datetime) {
+      user_e.splice(i, 0, new_user_e);
+      found = true;
       break;
     }
   }
