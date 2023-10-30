@@ -210,3 +210,4 @@ console.log(Object.values(obj));
 - stick with lts verisons of node
 - downloaded node in this class
 - APIs connect our front end to the back end of the websites
+- to maek API set object to 'application/json'
