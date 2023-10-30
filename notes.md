@@ -13,14 +13,8 @@
       <p>This is some text in a div element.</p>
     </div>
 - In the following code, what is the difference between the #title and .grid selector?
-  - title is the title of the page, not sure about #title
-  - title is in HTML
-  - grid is in CSS
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-  - im honestly not that sure
+  - #title selects by element ID, while .grid selects by element class.
+  - 
 - In the following code, what is the difference between padding and margin?
   - padding can be on the top, right, bottom, or left
     - padding has the following properties (length --> padding length, % --> percentage of the width, inherit --> inherited from the parent element)
