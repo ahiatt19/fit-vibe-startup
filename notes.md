@@ -175,9 +175,11 @@ console.log(Object.values(obj));
 - Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
 - - bozo.click is top domain and others are root domains
 
-- Is a web certificate is necessary to use HTTPS.
+- Is a web certificate necessary to use HTTPS.
+- - not secure without one
 - Can a DNS A record can point to an IP address or another A record.
 - - look at DNS and ROUTE 53 (maybe AWS)
+  - points to 3.223.128.57 which I think is the IP address.
 - Port 443, 80, 22 is reserved for which protocol?
 - - Ports 443 is HTTPS, 22 is SSH, 80 is HTTP
 - What will the following code using Promises output when executed?
