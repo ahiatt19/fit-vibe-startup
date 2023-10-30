@@ -207,4 +207,6 @@ console.log(Object.values(obj));
   - 
 
 ### NOTES 10/30
-- 
+- stick with lts verisons of node
+- downloaded node in this class
+- APIs connect our front end to the back end of the websites
