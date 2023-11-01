@@ -198,10 +198,14 @@ console.log(Object.values(obj));
 - cookies help authenticate you, they can put it tracking cookies, they are a strategy to establish a session
 - "curl" to debug APIs use it a lot
 - - curl -v "url"
-  - 
+
 
 ### NOTES 10/30
 - stick with lts verisons of node
 - downloaded node in this class
 - APIs connect our front end to the back end of the websites
 - to maek API set object to 'application/json'
+
+
+## NOTES 11/1
+- 
