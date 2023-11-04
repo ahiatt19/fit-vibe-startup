@@ -207,5 +207,5 @@ console.log(Object.values(obj));
 - to maek API set object to 'application/json'
 
 
-## NOTES 11/1
-- 
+## NOTES 11/4
+- dont use port 3000 that is simon, use 4000
