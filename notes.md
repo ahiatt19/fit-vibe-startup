@@ -209,3 +209,4 @@ console.log(Object.values(obj));
 
 ## NOTES 11/4
 - dont use port 3000 that is simon, use 4000
+- outside services must work with * or calling my orgin or I can't use it
