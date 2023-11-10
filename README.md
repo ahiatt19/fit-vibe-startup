@@ -64,3 +64,13 @@ For this deliverable I properly styled the application into its final appearance
 - **Aplacation elements** - I used contrasting colors and stayed on a fun theme.
 - **Application text content** - Consistent fonts.
 
+## JavaScript deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **Login** - when you enter a username and password it takes you to the form/ new entry page.
+- **Database** - Displays the leaderboard of entries based on the amount of calories burned from the local storage and the past entries from the local stoare based on date entered.
+- **WebSocket** - This will be implemented through the Leaderboard page when other users submit entries to it
+- **Application Logic** - The calories and dates entered determine where on the tables the entries end up.
+- **Application Picture** - One picture on the Past Entries page.
+
