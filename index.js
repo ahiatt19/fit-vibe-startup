@@ -25,6 +25,7 @@ apiRouter.get('/user_e', (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/entry', (req, res) => {
+  console.log('hit entry on express')
   entries = updateEntries(req.body, entries);
   res.send(entries);
 });
@@ -57,7 +58,7 @@ function updateEntries(newEntry, entries) {
   }
 
   if (!found) {
-    scores.push(newEntry);
+    entries.push(newEntry);
   }
 
   if (entries.length > 10) {

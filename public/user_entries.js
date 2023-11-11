@@ -11,11 +11,11 @@ function getUserName() {
     let user_e = [];
     try {
         // Get the latest high scores from the service
-        const response = fetch('/api/user_e');
-        scores = response.json();
+        const response = fetch('/user_e');
+        user_e = response.json();
     
         // Save the scores in case we go offline in the future
-        localStorage.setItem('entries', JSON.stringify(scores));
+        localStorage.setItem('user_e', JSON.stringify(user_e));
       } catch {
         // If there was an error then just use the last saved scores
         const user_eText = localStorage.getItem('user_e');

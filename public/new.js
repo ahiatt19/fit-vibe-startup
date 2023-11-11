@@ -12,50 +12,67 @@ function getUserName() {
   //entryE1.textContent = entry;
 //}
 
-function saveForm() {
+async function saveForm() {
     //saves data to Local Storage
     const date = document.querySelector("#datetime");
-    localStorage.setItem("datetime", dateE1.value.substring(0, 10));
+    //localStorage.setItem("datetime", date.value.substring(0, 10));
     const calories = document.querySelector("#cals");
-    localStorage.setItem("cals", caloriesE1.value);
+    //localStorage.setItem("cals", calories.value);
     const wrkout = document.querySelector("#wrkout");
-    localStorage.setItem("wrkout", wrkoutE1.value);
+    //localStorage.setItem("wrkout", wrkout.value);
     const note = document.querySelector("#note");
-    localStorage.setItem("note", noteE1.value)
+    //localStorage.setItem("note", note.value)
 
     const userName = this.getUserName();
     const newEntry = {name: userName, calories: calories.value, workout: wrkout.value, note: note.value};
-    const newUserEntry = {username: userName, datetime: dateE1.value.substring(0, 10), calories: caloriesE1.value, workout: wrkoutE1.value, note: noteE1.value};
+    const newUserEntry = {username: userName, datetime: date.value.substring(0, 10), calories: calories.value, workout: wrkout.value, note: note.value};
 
     try {
-      const response = fetch('/api/score', {
+      const response = await fetch('/entry', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newEntry),
       });
 
+      const response1 = await fetch('/userentry', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(newUserEntry),
+      });
+
       // Store what the service gave us as the high scores
-      const entries = response.json();
+      const entries = await response.json();
       localStorage.setItem('entries', JSON.stringify(entries));
+      const user_e = await response1.json();
+     localStorage.setItem('user_e', JSON.stringify(user_e));
     } catch {
       // If there was an error then just track scores locally
-      this.updateScoresLocal(newEntry);
-      this.updateUserEntry(newUserEntry);
+      this.updateEntriesLocal(newEntry);
+      this.updateUserEntryLocal(newUserEntry);
     }
 
-    
+    // try {
+    //  const response = await fetch('/userentry', {
+    //    method: 'POST',
+    //    headers: {'content-type': 'application/json'},
+    //    body: JSON.stringify(newUserEntry),
+    //  });
+    //  //console.log('is this working')
+    //  const user_e = await response.json();
+    //  localStorage.setItem('user_e', JSON.stringify(user_e));
+    // } catch {
+    //  this.updateUserEntryLocal(newUserEntry);
+    // }
 
-    entries = this.updateEntriesLocal(newEntry);
     //console.log(entries)
-    user_e = this.updateUserEntryLocal(newUserEntry);
+    //user_e = this.updateUserEntryLocal(newUserEntry);
     //console.log(entries)
-    localStorage.setItem('entries', JSON.stringify(entries));
-    localStorage.setItem('user_e', JSON.stringify(user_e))
 
     window.location.href = "leaderboard.html";
 }
 
-function updateEntriesLocal(NewEntry) {
+function updateEntriesLocal(newEntry) {
+  //console.log('hitting this func')
   //const date = new Date().toLocaleDateString();
 
   let entries = [];
@@ -88,6 +105,7 @@ function updateEntriesLocal(NewEntry) {
 
 
 function updateUserEntryLocal(newUserEntry) {
+  
   user_e = [];
   const user_eText = localStorage.getItem('user_e');
   if (user_eText) {
@@ -108,5 +126,5 @@ function updateUserEntryLocal(newUserEntry) {
     user_e.push(newUserEntry);
   }
 
-  return user_e;
+  localStorage.setItem('user_e', JSON.stringify(user_e));
 }

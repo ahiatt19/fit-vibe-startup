@@ -6,14 +6,23 @@ function getUserName() {
     return localStorage.getItem('username');
   }
 
-function loadEntries() {
-    entries = [];
-    const entriesText = localStorage.getItem('entries')
-    if (entriesText) {
-        entries = JSON.parse(entriesText);
+async function loadEntries() {
+    let entries = [];
+    try {
+    // Get the latest high scores from the service
+        const response = await fetch('/entries');
+        entries = await response.json();
+
+    // Save the scores in case we go offline in the future
+        localStorage.setItem('entries', JSON.stringify(entries));
+    } catch {
+    // If there was an error then just use the last saved scores
+        const entriesText = localStorage.getItem('entries');
+        if (entriesText) {
+            entries = JSON.parse(entriesText);
+        }
     }
-    //console.log(entries)
-    console.log("entries")
+
     const tableBodyE1 = document.querySelector('#entries');
     //console.log(tableBodyE1)
     
