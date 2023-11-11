@@ -74,3 +74,12 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **Application Logic** - The calories and dates entered determine where on the tables the entries end up.
 - **Application Picture** - One picture on the Past Entries page.
 
+## Service deliverable
+
+For this deliverable I added backend endpoints that receives an entry and returns the entrie leaderboard and past entry table.
+
+- **Node.js/Express HTTP service** - done!
+- **Static middleware for frontend** - done!
+- **Calls to third party endpoints** - done, I did this with quotes.
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for entries.
+- **Frontend calls service endpoints** - I did this using the fetch function to get the entries.
