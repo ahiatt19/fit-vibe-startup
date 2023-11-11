@@ -14,37 +14,40 @@ function getUserName() {
 
 function saveForm() {
     //saves data to Local Storage
-    const dateE1 = document.querySelector("#datetime");
+    const date = document.querySelector("#datetime");
     localStorage.setItem("datetime", dateE1.value.substring(0, 10));
-    const caloriesE1 = document.querySelector("#cals");
+    const calories = document.querySelector("#cals");
     localStorage.setItem("cals", caloriesE1.value);
-    const wrkoutE1 = document.querySelector("#wrkout");
+    const wrkout = document.querySelector("#wrkout");
     localStorage.setItem("wrkout", wrkoutE1.value);
-    const noteE1 = document.querySelector("#note");
+    const note = document.querySelector("#note");
     localStorage.setItem("note", noteE1.value)
 
-
     const userName = this.getUserName();
-    let entries = [];
-    const entriesText = localStorage.getItem('entries');
-    if (entriesText) {
-      entries = JSON.parse(entriesText);
+    const newEntry = {name: userName, calories: calories.value, workout: wrkout.value, note: note.value};
+    const newUserEntry = {username: userName, datetime: dateE1.value.substring(0, 10), calories: caloriesE1.value, workout: wrkoutE1.value, note: noteE1.value};
+
+    try {
+      const response = fetch('/api/score', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(newEntry),
+      });
+
+      // Store what the service gave us as the high scores
+      const entries = response.json();
+      localStorage.setItem('entries', JSON.stringify(entries));
+    } catch {
+      // If there was an error then just track scores locally
+      this.updateScoresLocal(newEntry);
+      this.updateUserEntry(newUserEntry);
     }
 
-    entries = this.updateEntries(userName, caloriesE1.value, wrkoutE1.value, noteE1.value, entries);
+    
+
+    entries = this.updateEntriesLocal(newEntry);
     //console.log(entries)
-
-
-    user_e = [];
-    const user_eText = localStorage.getItem('user_e');
-    if (user_eText) {
-      user_e = JSON.parse(user_eText);
-    }
-    
-    
-    
-    user_e = this.updateUser_e(userName, dateE1.value.substring(0, 10), caloriesE1.value, wrkoutE1.value, noteE1.value, user_e);
-
+    user_e = this.updateUserEntryLocal(newUserEntry);
     //console.log(entries)
     localStorage.setItem('entries', JSON.stringify(entries));
     localStorage.setItem('user_e', JSON.stringify(user_e))
@@ -52,9 +55,14 @@ function saveForm() {
     window.location.href = "leaderboard.html";
 }
 
-function updateEntries(userName, cals, wrkout, note, entries) {
+function updateEntriesLocal(NewEntry) {
   //const date = new Date().toLocaleDateString();
-  const newEntry = { name: userName, calories: cals, workout: wrkout, note: note };
+
+  let entries = [];
+  const entriesText = localStorage.getItem('entries');
+  if (entriesText) {
+    entries = JSON.parse(entriesText);
+  }
 
   let found = false;
   for (const [i, prevEntry] of entries.entries()) {
@@ -75,25 +83,29 @@ function updateEntries(userName, cals, wrkout, note, entries) {
     entries.length = 10;
   }
 
-  return entries;
+  localStorage.setItem('entries', JSON.stringify(entries));
 }
 
 
-function updateUser_e(userName, datetime, cals, workout, note, user_e) {
-  const new_user_e = {username: userName, datetime: datetime, calories: cals, workout: workout, note: note};
+function updateUserEntryLocal(newUserEntry) {
+  user_e = [];
+  const user_eText = localStorage.getItem('user_e');
+  if (user_eText) {
+    user_e = JSON.parse(user_eText);
+  }
 
 
   let found = false;
   for (const [i, prevEntry] of user_e.entries()) {
-    if (prevEntry.datetime < datetime) {
-      user_e.splice(i, 0, new_user_e);
+    if (prevEntry.datetime < newUserEntry.datetime) {
+      user_e.splice(i, 0, newUserEntry);
       found = true;
       break;
     }
   }
   //console.log(user_e)
   if (!found) {
-    user_e.push(new_user_e);
+    user_e.push(newUserEntry);
   }
 
   return user_e;

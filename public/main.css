@@ -71,3 +71,8 @@ body {
   cur-user {
     background: Plum;
   }
+
+  .quote {
+    color: Plum;
+    font-size: 14px;
+  }
