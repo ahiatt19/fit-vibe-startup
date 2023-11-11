@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // The service port. In production the frontend code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -25,7 +25,6 @@ apiRouter.get('/user_e', (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/entry', (req, res) => {
-  console.log('hit entry on express')
   entries = updateEntries(req.body, entries);
   res.send(entries);
 });
