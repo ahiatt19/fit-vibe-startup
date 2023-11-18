@@ -34,6 +34,7 @@ async function saveForm() {
         body: JSON.stringify(newEntry),
       });
 
+      //let username = localStorage.getItem('username');
       const response1 = await fetch('/api/userentry', {
         method: 'POST',
         headers: {'content-type': 'application/json'},

@@ -47,12 +47,14 @@ function getLeaderboard() {
 
 
 function getUserEntries() {
-    //const query = { username: Current_User }
+    const query = { calories: { $gt: 0 } };
     const options = {
-        sort: { datetime: -1 }
+        sort: { datetime: -1 },
+        //works
+        //limit: 10,
     };
     console.log("in User Entries")
-    const cursor = userCollection.find();
+    const cursor = userCollection.find(query, options);
     return cursor.toArray();
 }
 
