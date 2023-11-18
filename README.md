@@ -83,3 +83,11 @@ For this deliverable I added backend endpoints that receives an entry and return
 - **Calls to third party endpoints** - done, I did this with quotes.
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for entries.
 - **Frontend calls service endpoints** - I did this using the fetch function to get the entries.
+
+## DB deliverable
+
+For this deliverable I stored the leaderboard and user entries in the database.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!
