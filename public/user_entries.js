@@ -7,12 +7,14 @@ function getUserName() {
   }
 
 
-  function loadPastEntries() {
+  async function loadPastEntries() {
     let user_e = [];
     try {
         // Get the latest high scores from the service
-        const response = fetch('/api/user_e');
-        user_e = response.json();
+        let username = getUserName();
+        console.log(username)
+        const response = await fetch(`/api/user_e/${username}`);
+        user_e = await response.json();
     
         // Save the scores in case we go offline in the future
         localStorage.setItem('user_e', JSON.stringify(user_e));

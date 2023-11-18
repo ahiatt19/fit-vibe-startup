@@ -21,8 +21,9 @@ apiRouter.get('/entries', async (_req, res) => {
   res.send(entries);
 });
 
-apiRouter.get('/user_e', async (_req, res) => {
-  const user_e = await DB.getUserEntries();
+apiRouter.get('/user_e/:username', async (_req, res) => {
+  console.log(_req.params.username);
+  const user_e = await DB.getUserEntries(_req.params.username);
   res.send(user_e);
 });
 

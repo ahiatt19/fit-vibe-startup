@@ -42,10 +42,10 @@ async function saveForm() {
       });
 
       // Store what the service gave us as the high scores
-      const entries = await response.json();
-      localStorage.setItem('entries', JSON.stringify(entries));
-      const user_e = await response1.json();
-      localStorage.setItem('user_e', JSON.stringify(user_e));
+      // const entries = await response.json();
+      // localStorage.setItem('entries', JSON.stringify(entries));
+      // const user_e = await response1.json();
+      // localStorage.setItem('user_e', JSON.stringify(user_e));
     } catch {
       // If there was an error then just track scores locally
       this.updateEntriesLocal(newEntry);

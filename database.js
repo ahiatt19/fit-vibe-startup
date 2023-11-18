@@ -46,8 +46,9 @@ function getLeaderboard() {
 
 
 
-function getUserEntries() {
-    const query = { calories: { $gt: 0 } };
+function getUserEntries(username) {
+  console.log(username);
+    const query = { username: username };
     const options = {
         sort: { datetime: -1 },
         //works
