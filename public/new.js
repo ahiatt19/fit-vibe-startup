@@ -3,7 +3,7 @@ playerNameEl.textContent = this.getUserName();
 
 
 function getUserName() {
-    return localStorage.getItem('username');
+    return localStorage.getItem('userName');
   }
 
 
