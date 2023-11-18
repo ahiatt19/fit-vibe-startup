@@ -28,13 +28,13 @@ async function saveForm() {
     const newUserEntry = {username: userName, datetime: date.value.substring(0, 10), calories: calories.value, workout: wrkout.value, note: note.value};
 
     try {
-      const response = await fetch('/entry', {
+      const response = await fetch('/api/entry', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newEntry),
       });
 
-      const response1 = await fetch('/userentry', {
+      const response1 = await fetch('/api/userentry', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newUserEntry),
@@ -44,7 +44,7 @@ async function saveForm() {
       const entries = await response.json();
       localStorage.setItem('entries', JSON.stringify(entries));
       const user_e = await response1.json();
-     localStorage.setItem('user_e', JSON.stringify(user_e));
+      localStorage.setItem('user_e', JSON.stringify(user_e));
     } catch {
       // If there was an error then just track scores locally
       this.updateEntriesLocal(newEntry);

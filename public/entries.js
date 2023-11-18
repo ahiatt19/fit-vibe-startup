@@ -10,7 +10,7 @@ async function loadEntries() {
     let entries = [];
     try {
     // Get the latest high scores from the service
-        const response = await fetch('/entries');
+        const response = await fetch('/api/entries');
         entries = await response.json();
 
     // Save the scores in case we go offline in the future
@@ -49,7 +49,7 @@ async function loadEntries() {
             rowEl.appendChild(workoutTdE1);
             rowEl.appendChild(notesTdE1);
             
-            
+        
             tableBodyE1.appendChild(rowEl);
         }
 

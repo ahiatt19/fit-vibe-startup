@@ -11,7 +11,7 @@ function getUserName() {
     let user_e = [];
     try {
         // Get the latest high scores from the service
-        const response = fetch('/user_e');
+        const response = fetch('/api/user_e');
         user_e = response.json();
     
         // Save the scores in case we go offline in the future
