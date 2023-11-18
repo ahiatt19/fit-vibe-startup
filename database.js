@@ -36,10 +36,11 @@ function getLeaderboard() {
   const query = { calories: { $gt: 0 } };
   const options = {
     sort: { calories: -1 },
+    //working
     limit: 10,
   };
   console.log("in getLeaderboard")
-  const cursor = entryCollection.find();
+  const cursor = entryCollection.find(query, options);
   return cursor.toArray();
 }
 
@@ -48,7 +49,7 @@ function getLeaderboard() {
 function getUserEntries() {
     //const query = { username: Current_User }
     const options = {
-        sort: { users: -1 }
+        sort: { datetime: -1 }
     };
     console.log("in User Entries")
     const cursor = userCollection.find();

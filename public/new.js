@@ -24,8 +24,8 @@ async function saveForm() {
     //localStorage.setItem("note", note.value)
 
     const userName = this.getUserName();
-    const newEntry = {name: userName, calories: calories.value, workout: wrkout.value, note: note.value};
-    const newUserEntry = {username: userName, datetime: date.value.substring(0, 10), calories: calories.value, workout: wrkout.value, note: note.value};
+    const newEntry = {name: userName, calories: parseFloat(calories.value), workout: wrkout.value, note: note.value};
+    const newUserEntry = {username: userName, datetime: date.value.substring(0, 10), calories: parseFloat(calories.value), workout: wrkout.value, note: note.value};
 
     try {
       const response = await fetch('/api/entry', {
