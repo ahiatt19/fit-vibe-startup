@@ -91,3 +91,12 @@ For this deliverable I stored the leaderboard and user entries in the database.
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
+
+## Login deliverable
+
+For this deliverable I made the login authenticated to the db.
+
+- **User Registration** - creates a new account in the database.
+- **Exsisting User** - You can create a new entry and check old entries
+- **Uses MongoDB to store credentials** - Store both user and entries
+- **Restricts Functionality**- You can only track your workout if you log in.
