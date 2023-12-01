@@ -1,3 +1,7 @@
+const FormSubmit = 'formSubmit';
+let socket;
+configureWebSocket();
+
 const playerNameEl = document.querySelector('.user-name');
 playerNameEl.textContent = this.getUserName();
 
@@ -23,6 +27,7 @@ async function saveForm() {
     const note = document.querySelector("#note");
     //localStorage.setItem("note", note.value)
 
+
     const userName = this.getUserName();
     const newEntry = {name: userName, calories: parseFloat(calories.value), workout: wrkout.value, note: note.value};
     const newUserEntry = {username: userName, datetime: date.value.substring(0, 10), calories: parseFloat(calories.value), workout: wrkout.value, note: note.value};
@@ -40,6 +45,9 @@ async function saveForm() {
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newUserEntry),
       });
+
+      // Let other users know they submitted a entry
+      broadcastEvent(userName, formSubmit, newEntry);
 
       // Store what the service gave us as the high scores
       // const entries = await response.json();
@@ -129,3 +137,41 @@ function updateUserEntryLocal(newUserEntry) {
 
   localStorage.setItem('user_e', JSON.stringify(user_e));
 }
+
+// Functionality for peer communication using WebSocket
+
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', '', 'connected');
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'form', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === FormSubmit) {
+        displayMsg('user', msg.from, `burned ${msg.value.calories} calories`);
+      }
+    };
+}
+
+function displayMsg(cls, from, msg) {
+  const chatText = document.querySelector('#user-messages');
+  chatText.innerHTML =
+    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(from, type, value) {
+  const event = {
+    from: from,
+    type: type,
+    value: value,
+  };
+  socket.send(JSON.stringify(event));
+}
+
+
+
