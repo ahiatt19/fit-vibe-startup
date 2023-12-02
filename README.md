@@ -100,3 +100,11 @@ For this deliverable I made the login authenticated to the db.
 - **Exsisting User** - You can create a new entry and check old entries
 - **Uses MongoDB to store credentials** - Store both user and entries
 - **Restricts Functionality**- You can only track your workout if you log in.
+
+## Websocket deliverable
+
+For this deliverable I used WebSocket to communicate between users of who else is on the app.
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - All users logging in and user calories are displayed in realtime.
