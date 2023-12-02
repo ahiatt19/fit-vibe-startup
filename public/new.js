@@ -119,7 +119,7 @@ class WebS {
     //user_e = this.updateUserEntryLocal(newUserEntry);
     //console.log(entries)
 
-    //window.location.href = "leaderboard.html";
+    window.location.href = "leaderboard.html";
   }
 
   updateEntriesLocal(newEntry) {
