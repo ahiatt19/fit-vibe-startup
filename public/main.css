@@ -68,7 +68,9 @@ body {
     }
   }
 
- 
+ #user-messages {
+  background: LavenderBlush;
+ }
 
   .quote {
     color: Plum;
