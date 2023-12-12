@@ -1,5 +1,5 @@
 
-body {
+.body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
@@ -42,7 +42,7 @@ body {
     
   }
   
-  navbar-brand {
+  .navbar-brand {
     padding-left: 0.3em;
     border-bottom: solid rgb(154, 46, 46) thin;
     font-family: Verdana, sans-serif;
