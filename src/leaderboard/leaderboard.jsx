@@ -3,7 +3,7 @@ import React from 'react';
 import './leaderboard.css'
 
 export function Leaderboard() {
-  const [entries, setentries] = React.useState([]);
+  const [entries, setEntries] = React.useState([]);
 
   React.useEffect(() => {
     fetch('/api/entries')
@@ -25,7 +25,7 @@ export function Leaderboard() {
     for (const [i, entry] of entries.entries()) {
       entryRows.push(
         <tr key={i}>
-          <td>{i}</td>
+          <td>{i+1}</td>
           <td>{entry.name}</td>
           <td>{entry.calories}</td>
           <td>{entry.workout}</td>
@@ -47,11 +47,11 @@ export function Leaderboard() {
         <table className='table table-warning table-striped-columns text-center'>
           <thead className='table-light'>
             <tr>
-              <th>Rank</th>
-              <th>Username</th>
-              <th>Calories</th>
-              <th>Workout</th>
-              <th>Notes</th>
+              <th id='pink_head'>Rank</th>
+              <th id='purp_head'>Username</th>
+              <th id='pink_head'>Calories</th>
+              <th id='purp_head'>Workout</th>
+              <th id='pink_head'>Notes</th>
             </tr>
           </thead>
           <tbody class="table-light" id='entries'>{entryRows}</tbody>
