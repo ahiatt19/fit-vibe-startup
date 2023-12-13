@@ -1,12 +1,15 @@
 import React from 'react';
 import './new';
 
+
 import { Users } from './user';
+import { EntryForm } from './EntryForm';
 
 export function New(props) {
   return (
-    <main className='container-fluid bg-secondary text-center'>
-      <div>New Entry Form displayed here</div>
+    <main className='container-fluid'>
+      <Users userName={props.userName} />
+      <EntryForm userName={props.userName} />
     </main>
   );
 }

@@ -28,26 +28,32 @@ export default function App() {
                     FitVibe<sup>&reg;</sup>
                     </div>
                     <menu className='navbar-nav'>
-                    <li className='nav-item'>
-                        <NavLink className='nav-link' to=''>
-                        Home
-                        </NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink className='nav-link' to='new'>
-                        New
-                        </NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink className='nav-link' to='leaderboard'>
-                        Leaderboard
-                        </NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink className='nav-link' to='past'>
-                        Past
-                        </NavLink>
-                    </li>
+                        <li className='nav-item'>
+                            <NavLink className='nav-link' to=''>
+                            Home
+                            </NavLink>
+                        </li>
+                        {authState === AuthState.Authenticated && (
+                            <li className='nav-item'>
+                                <NavLink className='nav-link' to='new'>
+                                New
+                                </NavLink>
+                            </li>
+                        )}
+                        {authState === AuthState.Authenticated && (
+                            <li className='nav-item'>
+                                <NavLink className='nav-link' to='leaderboard'>
+                                Leaderboard
+                                </NavLink>
+                            </li>
+                        )}
+                        {authState === AuthState.Authenticated && (
+                            <li className='nav-item'>
+                                <NavLink className='nav-link' to='past'>
+                                Past
+                                </NavLink>
+                            </li>
+                        )}
                     </menu>
                 </nav>
             </header>
@@ -69,7 +75,7 @@ export default function App() {
                     }
                     exact
                 />    
-                <Route path='/new' element={<New />} />
+                <Route path='/new' element={<New userName={userName}/>} />
                 <Route path='/leaderboard' element={<Leaderboard />} />
                 <Route path='/past' element={<Past />} />
                 <Route path='*' element={<NotFound />} />

@@ -1,4 +1,4 @@
-.playerName {
+.userName {
     color: rgb(196, 155, 206);
     font-size: 1.2em;
     padding: 0.5em;
@@ -8,3 +8,10 @@ main {
   background-color: blueviolet;
 }
 
+.head {
+  color: rgb(177, 89, 202);
+}
+
+.button {
+  color:rgb(177, 89, 202);
+}
