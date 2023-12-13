@@ -49,19 +49,20 @@ export function Past() {
 
   return (
     <main className='container-fluid text-center'>
-      <h1>Past Workouts</h1>
+      <h1 id='head'>Past Workouts</h1>
       <table className='table table-warning table-striped-columns'>
         <thead className='table-light'>
           <tr>
-            <th>Username</th>
-            <th>Date</th>
-            <th>Calories</th>
-            <th>Workout</th>
-            <th>Notes</th>
+            <th id='purp_head'>Username</th>
+            <th id='pink_head'>Date</th>
+            <th id='purp_head'>Calories</th>
+            <th id='pink_head'>Workout</th>
+            <th id='purp_head'>Notes</th>
           </tr>
         </thead>
         <tbody class="table-light" id='user_e'>{u_eRows}</tbody>
       </table>
+      
     </main>
   );
 }

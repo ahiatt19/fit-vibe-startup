@@ -43,7 +43,7 @@ export function Leaderboard() {
 
   return (
     <main className='container-fluid'>
-      <h1>Leaderboard</h1>
+      <h1 id='head'>Leaderboard</h1>
         <table className='table table-warning table-striped-columns text-center'>
           <thead className='table-light'>
             <tr>
