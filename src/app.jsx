@@ -16,33 +16,33 @@ export default function App() {
       <BrowserRouter>
         <div className='body bg-white text-dark'>
             <header className='container-fluid'>
-            <nav className='navbar fixed-top navbar-dark'>
-                <div className='navbar-brand'>
-                FitVibe<sup>&reg;</sup>
-                </div>
-                <menu className='navbar-nav'>
-                <li className='nav-item'>
-                    <NavLink className='nav-link' to=''>
-                    Home
-                    </NavLink>
-                </li>
-                <li className='nav-item'>
-                    <NavLink className='nav-link' to='new'>
-                    New
-                    </NavLink>
-                </li>
-                <li className='nav-item'>
-                    <NavLink className='nav-link' to='leaderboard'>
-                    Leaderboard
-                    </NavLink>
-                </li>
-                <li className='nav-item'>
-                    <NavLink className='nav-link' to='past'>
-                    Past
-                    </NavLink>
-                </li>
-                </menu>
-            </nav>
+                <nav className='navbar fixed-top navbar-dark'>
+                    <div className='navbar-brand'>
+                    FitVibe<sup>&reg;</sup>
+                    </div>
+                    <menu className='navbar-nav'>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to=''>
+                        Home
+                        </NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to='new'>
+                        New
+                        </NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to='leaderboard'>
+                        Leaderboard
+                        </NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to='past'>
+                        Past
+                        </NavLink>
+                    </li>
+                    </menu>
+                </nav>
             </header>
 
     

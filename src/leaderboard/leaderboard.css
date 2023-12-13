@@ -1,5 +1,5 @@
 
-.body {
+body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
@@ -10,7 +10,6 @@
     flex: 0 80px;
     font-family: Verdana, sans-serif;
     background: Plum;
-    color:Purple; 
   
   }
   
@@ -29,7 +28,6 @@
     flex: 0 30px;
     font-family: Verdana, sans-serif;
     background: Plum;
-    color: rgb(223, 115, 255);
   }
   
   
@@ -44,11 +42,10 @@
     
   }
   
-  .navbar-brand {
+  navbar-brand {
     padding-left: 0.3em;
-    border-bottom: solid rgb(255, 240, 245) thin;
+    border-bottom: solid rgb(154, 46, 46) thin;
     font-family: Verdana, sans-serif;
-    color: rgb(179, 45, 215);
   }
   
   menu .nav-item {
@@ -57,7 +54,6 @@
   
   footer a {
     float: right;
-    
   }
   
   @media (max-height: 600px) {
@@ -73,15 +69,10 @@
   }
 
  #user-messages {
-  background: rgb(255, 240, 245);
+  background: LavenderBlush;
  }
 
   .quote {
-    color: rgb(221, 160, 221);
+    color: Plum;
     font-size: 14px;
-  }
-
-  .nav-link {
-    color: rgb(177, 89, 202);
-    
   }
