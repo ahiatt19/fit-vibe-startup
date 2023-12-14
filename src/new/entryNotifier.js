@@ -24,8 +24,7 @@ const EntryEvent = {
       
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.socket.onopen = (event) => {
-        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'connected' }));
-        EntryNotifier.broadcastEvent('slay', EntryEvent.UserLoggedIn, {});
+        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.Start, { msg: 'connected' }));
       };
       this.socket.onclose = (event) => {
         this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'disconnected' }));

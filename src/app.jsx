@@ -77,7 +77,7 @@ export default function App() {
                 />    
                 <Route path='/new' element={<New userName={userName}/>} />
                 <Route path='/leaderboard' element={<Leaderboard />} />
-                <Route path='/past' element={<Past />} />
+                <Route path='/past' element={<Past userName={userName}/>} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
             

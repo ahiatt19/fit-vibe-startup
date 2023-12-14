@@ -1,17 +1,16 @@
 import React from 'react';
 import './past.css';
 
-function getUserName() {
-  return localStorage.getItem('userName');
-}
 
-export function Past() {
+export function Past(props) {
+  const userName = props.userName;
+
   const [user_e, setuser_e] = React.useState([]);
   const [quote, setQuote] = React.useState('Loading...');
   const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
   React.useEffect(() => {
-    fetch('/api/user_e')
+    fetch(`/api/user_e/${userName}`)
       .then((response) => response.json())
       .then((user_e) => {
         setuser_e(user_e);
@@ -70,7 +69,7 @@ export function Past() {
               <th id='purp_head'>Notes</th>
             </tr>
           </thead>
-          <tbody class="table-light" id='user_e'>{u_eRows}</tbody>
+          <tbody className="table-light" id='user_e'>{u_eRows}</tbody>
         </table>
         <div className='quote-box'>
           <p className='quote'>{quote}</p>
