@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './past.css';
 
 function getUserName() {
@@ -8,6 +7,8 @@ function getUserName() {
 
 export function Past() {
   const [user_e, setuser_e] = React.useState([]);
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
 
   React.useEffect(() => {
     fetch('/api/user_e')
@@ -22,6 +23,15 @@ export function Past() {
           setuser_e(JSON.parse(user_eText));
         }
       });
+
+      fetch('https://api.quotable.io/random')
+        .then((response) => response.json())
+        .then((data) => {
+          setQuote(data.content);
+            setQuoteAuthor(data.author);
+        })
+      .catch();
+
   }, []);
 
 
@@ -49,20 +59,23 @@ export function Past() {
 
   return (
     <main className='container-fluid text-center'>
-      <h1 id='head'>Past Workouts</h1>
-      <table className='table table-warning table-striped-columns'>
-        <thead className='table-light'>
-          <tr>
-            <th id='purp_head'>Username</th>
-            <th id='pink_head'>Date</th>
-            <th id='purp_head'>Calories</th>
-            <th id='pink_head'>Workout</th>
-            <th id='purp_head'>Notes</th>
-          </tr>
-        </thead>
-        <tbody class="table-light" id='user_e'>{u_eRows}</tbody>
-      </table>
-      
+        <h1 id='head'>Past Workouts</h1>
+        <table className='table table-warning table-striped-columns'>
+          <thead className='table-light'>
+            <tr>
+              <th id='purp_head'>Username</th>
+              <th id='pink_head'>Date</th>
+              <th id='purp_head'>Calories</th>
+              <th id='pink_head'>Workout</th>
+              <th id='purp_head'>Notes</th>
+            </tr>
+          </thead>
+          <tbody class="table-light" id='user_e'>{u_eRows}</tbody>
+        </table>
+        <div className='quote-box'>
+          <p className='quote'>{quote}</p>
+          <p className='author'>{quoteAuthor}</p>
+        </div>
     </main>
   );
 }

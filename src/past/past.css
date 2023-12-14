@@ -77,6 +77,10 @@ body {
     font-size: 14px;
   }
 
+  .author {
+    color: rgb(177, 89, 202);
+  }
+
   #head {
     color: rgb(177, 89, 202);
   }
@@ -87,4 +91,11 @@ body {
 
   #purp_head {
     color: rgb(177, 89, 202);
+  }
+
+  .quote-box {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    background: LavenderBlush;
   }
