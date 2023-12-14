@@ -103,7 +103,7 @@ export function EntryForm(props) {
 
     return (
         <div className='entry'>
-          <h1 id='head'>Track your Workout</h1>
+          <h1 className="text-center" id='formhead'>Track your Workout</h1>
             <form className="text-center" method="get">
                 <ul>
                     <label id='form_item' htmlFor="datetime">Date & Time: </label>

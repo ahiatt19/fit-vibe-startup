@@ -3,14 +3,16 @@
   }
 
   .users {
-    flex: 1;
     width: 100%;
     padding-top: 0.5em;
     color: rgb(177, 89, 202);
+    padding-bottom: 0.5em;
   }
 
   .entry {
     flex: 1;
+    padding-top: 1em;
+    height: 100px;
   }
   
   .user-name {
@@ -40,6 +42,7 @@
   
 #form_item {
   color: rgb(222, 178, 235);
+  padding-bottom: .25em;
 }
 
 .game-name {
@@ -49,3 +52,8 @@
   color: rgb(177, 89, 202);
 }
 
+#formhead {
+  color: rgb(177, 89, 202);
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
