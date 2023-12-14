@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './new.css';
 
 import Button from 'react-bootstrap/Button';
 
 export function EntryForm(props) {
+  const navigate = useNavigate();
     const userName = props.userName;
 
     async function saveForm() {
@@ -41,7 +43,7 @@ export function EntryForm(props) {
             updateUserEntryLocal(newUserEntry);
           }
 
-
+        navigate('/leaderboard')
     }
 
     function updateEntriesLocal(newEntry) {
@@ -138,7 +140,7 @@ export function EntryForm(props) {
                     <label id='form_item' htmlFor="note">Note: </label>
                     <input type="note" id="note" placeholder="Optional" />
                 </ul>
-                <Button variant='primary' onClick={() => saveForm()}>
+                <Button id="head" variant='outline-dark' onClick={() => saveForm()}>
                     Submit
                 </Button>
             </form>
