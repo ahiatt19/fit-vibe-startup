@@ -28,13 +28,9 @@ export function Users(props) {
         message = ` burned ${event.value.calories} calories`;
       } else if (event.type === EntryEvent.UserLoggedIn) {
         message = ` logged on`;
-      } else if (event.type === EntryEvent.Start) {
-        message = `connected`;
       } else if (event.type === EntryEvent.System) {
-        message = event.value.msg;
+        message = event.value;
       }
-
-      console.log(event.type);
 
       messageArray.push(
         <div key={i} className='event'>

@@ -1,7 +1,5 @@
 const EntryEvent = {
     System: 'system',
-    End: 'entryEnd',
-    Start: 'entryStart',
     FormSubmit: 'formSubmit',
     UserLoggedIn: 'userLoggedIn'
   };
@@ -24,10 +22,12 @@ const EntryEvent = {
       
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.socket.onopen = (event) => {
-        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.Start, { msg: 'connected' }));
+        console.log('open');
+        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, 'connected'));
       };
       this.socket.onclose = (event) => {
-        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'disconnected' }));
+        console.log('close')
+        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, 'disconnected'));
       };
       this.socket.onmessage = async (msg) => {
         try {
@@ -36,6 +36,7 @@ const EntryEvent = {
         } catch {}
       };
     }
+
   
     broadcastEvent(from, type, value) {
       const event = new EventMessage(from, type, value);
