@@ -9,6 +9,8 @@ export function EntryForm(props) {
   const navigate = useNavigate();
     const userName = props.userName;
 
+    EntryNotifier.broadcastEvent(userName, EntryEvent.UserLoggedIn, {});
+
     async function saveForm() {
         const date = document.querySelector("#datetime");
         //localStorage.setItem("datetime", date.value.substring(0, 10));
@@ -34,7 +36,7 @@ export function EntryForm(props) {
                 headers: {'content-type': 'application/json'},
                 body: JSON.stringify(newUserEntry),
             });
-            
+
             EntryNotifier.broadcastEvent(userName, EntryEvent.FormSubmit, newEntry);
             
 
