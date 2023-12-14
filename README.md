@@ -108,3 +108,11 @@ For this deliverable I used WebSocket to communicate between users of who else i
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
 - **WebSocket data displayed** - All users logging in and user calories are displayed in realtime.
+
+## React deliverable
+
+For this deliverable I converted the application over to use React. 
+- **Bundled and transpiled** - used WebPack and Babel as generated from using create-react-app.
+- **Components** - login, new entry, leaderboard, and past entries are components.
+- **React Router** - React router is used
+- **React Hooks** - React hook is used.
