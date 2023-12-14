@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { GameEvent, GameNotifier } from './gameNotifier';
+import { EntryEvent, EntryNotifier } from './entryNotifier';
 import './new.css';
 
 export function Users(props) {
@@ -9,14 +9,14 @@ export function Users(props) {
   const [events, setEvent] = React.useState([]);
 
   React.useEffect(() => {
-    GameNotifier.addHandler(handleGameEvent);
+    EntryNotifier.addHandler(handleEntryEvent);
 
     return () => {
-      GameNotifier.removeHandler(handleGameEvent);
+      EntryNotifier.removeHandler(handleEntryEvent);
     };
   });
 
-  function handleGameEvent(event) {
+  function handleEntryEvent(event) {
     setEvent([...events, event]);
   }
 
@@ -24,21 +24,24 @@ export function Users(props) {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
-      if (event.type === GameEvent.End) {
-        message = `scored ${event.value.score}`;
-      } else if (event.type === GameEvent.Start) {
-        message = `started a new game`;
-      } else if (event.type === GameEvent.System) {
+      if (event.type === EntryEvent.End) {
+        message = `burned ${event.value.calories} calories`;
+      } else if (event.type === EntryEvent.Start) {
+        message = `started a new Entry`;
+      } else if (event.type === EntryEvent.System) {
         message = event.value.msg;
       }
 
+      console.log(event);
+
       messageArray.push(
         <div key={i} className='event'>
-          <span className={'user-event'}>{event.from.split('@')[0]}</span>
+          <span className={'user-event'}>{event.from}</span>
           {message}
         </div>
       );
     }
+    console.log(messageArray);
     return messageArray;
   }
 

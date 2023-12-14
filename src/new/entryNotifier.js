@@ -1,7 +1,9 @@
-const GameEvent = {
+const EntryEvent = {
     System: 'system',
-    End: 'gameEnd',
-    Start: 'gameStart',
+    End: 'entryEnd',
+    Start: 'entryStart',
+    FormSubmit: 'formSubmit',
+    UserLoggedIn: 'userLoggedIn'
   };
   
   class EventMessage {
@@ -12,19 +14,20 @@ const GameEvent = {
     }
   }
   
-  class GameEventNotifier {
+  class EntryEventNotifier {
     events = [];
     handlers = [];
   
     constructor() {
       let port = window.location.port;
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+      
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.socket.onopen = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System, { msg: 'connected' }));
+        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'connected' }));
       };
       this.socket.onclose = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System, { msg: 'disconnected' }));
+        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'disconnected' }));
       };
       this.socket.onmessage = async (msg) => {
         try {
@@ -58,6 +61,6 @@ const GameEvent = {
     }
   }
   
-  const GameNotifier = new GameEventNotifier();
-  export { GameEvent, GameNotifier };
+  const EntryNotifier = new EntryEventNotifier();
+  export { EntryEvent, EntryNotifier };
   

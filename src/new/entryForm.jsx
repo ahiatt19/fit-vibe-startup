@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './new.css';
+import { EntryEvent, EntryNotifier } from './entryNotifier';
 
 import Button from 'react-bootstrap/Button';
 
@@ -42,7 +43,9 @@ export function EntryForm(props) {
             updateEntriesLocal(newEntry);
             updateUserEntryLocal(newUserEntry);
           }
-
+        
+        
+        EntryNotifier.broadcastEvent(userName, EntryEvent.End, newEntry);
         navigate('/leaderboard')
     }
 
