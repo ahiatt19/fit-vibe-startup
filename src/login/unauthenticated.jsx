@@ -10,7 +10,6 @@ export function Unauthenticated(props) {
   const [displayError, setDisplayError] = React.useState(null);
 
   async function loginUser() {
-    EntryNotifier.broadcastEvent(userName, EntryEvent.userLoggedIn, {});
     loginOrCreate(`/api/auth/login`);
   }
 

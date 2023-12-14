@@ -25,18 +25,18 @@ export function Users(props) {
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
       if (event.type === EntryEvent.FormSubmit) {
-        message = `${userName} burned ${event.value.calories} calories`;
+        message = ` burned ${event.value.calories} calories`;
       } else if (event.type === EntryEvent.UserLoggedIn) {
-        message = `user ${userName} logged on`;
+        message = ` logged on`;
       } else if (event.type === EntryEvent.System) {
         message = event.value.msg;
       }
 
-      console.log(event);
+      console.log(event.type);
 
       messageArray.push(
         <div key={i} className='event'>
-          <span className={'user-event'}>{event.value.username}</span>
+          <span className={'user-event'}>{event.from}</span>
           {message}
         </div>
       );

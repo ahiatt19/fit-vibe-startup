@@ -54,7 +54,7 @@ export function Leaderboard() {
               <th id='pink_head'>Notes</th>
             </tr>
           </thead>
-          <tbody class="table-light" id='entries'>{entryRows}</tbody>
+          <tbody className="table-light" id='entries'>{entryRows}</tbody>
         </table>
     </main>
   );
