@@ -10,7 +10,6 @@ export function EntryForm(props) {
     const userName = props.userName;
 
     async function saveForm() {
-      console.log('hitting saveForm')
         const date = document.querySelector("#datetime");
         //localStorage.setItem("datetime", date.value.substring(0, 10));
         const calories = document.querySelector("#cals");
@@ -35,8 +34,9 @@ export function EntryForm(props) {
                 headers: {'content-type': 'application/json'},
                 body: JSON.stringify(newUserEntry),
             });
-
-            this.broadcastEvent(this.getUserName(), FormSubmit, newEntry);
+            
+            EntryNotifier.broadcastEvent(userName, EntryEvent.FormSubmit, newEntry);
+            
 
         } catch {
             // If there was an error then just track scores locally
@@ -45,7 +45,7 @@ export function EntryForm(props) {
           }
         
         
-        EntryNotifier.broadcastEvent(userName, EntryEvent.End, newEntry);
+        
         navigate('/leaderboard')
     }
 

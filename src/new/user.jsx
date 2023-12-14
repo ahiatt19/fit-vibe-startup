@@ -24,10 +24,10 @@ export function Users(props) {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
-      if (event.type === EntryEvent.End) {
-        message = `burned ${event.value.calories} calories`;
-      } else if (event.type === EntryEvent.Start) {
-        message = `started a new Entry`;
+      if (event.type === EntryEvent.FormSubmit) {
+        message = `${userName} burned ${event.value.calories} calories`;
+      } else if (event.type === EntryEvent.UserLoggedIn) {
+        message = `user ${userName} logged on`;
       } else if (event.type === EntryEvent.System) {
         message = event.value.msg;
       }
@@ -36,7 +36,7 @@ export function Users(props) {
 
       messageArray.push(
         <div key={i} className='event'>
-          <span className={'user-event'}>{event.from}</span>
+          <span className={'user-event'}>{event.value.username}</span>
           {message}
         </div>
       );

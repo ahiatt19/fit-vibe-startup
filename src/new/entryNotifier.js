@@ -27,7 +27,7 @@ const EntryEvent = {
         this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'connected' }));
       };
       this.socket.onclose = (event) => {
-        this.receiveEvent(new EventMessage('FitVibe', EntryEvent.System, { msg: 'disconnected' }));
+        this.receiveEvent(new EventMessage('system', EntryEvent.System, { msg: 'disconnected' }));
       };
       this.socket.onmessage = async (msg) => {
         try {

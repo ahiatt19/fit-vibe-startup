@@ -7,6 +7,7 @@
     padding-top: 0.5em;
     color: rgb(177, 89, 202);
     padding-bottom: 0.5em;
+    font-size: 1em;
   }
 
   .entry {
@@ -21,13 +22,16 @@
   }
   
   #user-messages {
-    color: rgb(185, 48, 59);
     padding-top: 0.25em;
-    opacity: 0.7;
+    opacity: 0.8;
   }
   
   .event {
-    color: rgb(69, 69, 69);
+    color: rgb(222, 178, 235);
+    width: 100%;
+    opacity: 0.8;
+    font-size: .95em;
+    padding-left: .1em;
   }
   
   .user-event {
