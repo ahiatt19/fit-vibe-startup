@@ -1,7 +1,7 @@
 # FitVibe 
 ## Description deliverable
 ### Elevator pitch
-For those of you in the fitness world, have you ever wanted to have a place where you could compete with others and become motivated to workout more?  FitVibe allows users to compete with others on the website through calories burned during your workout session.  With just a few clicks, you are able to see what type of workouts other users are doing, their calories burned, and the leaderboard for the day.  You also are able to track your own progress with the personal past entries  log. Come to compete, track and get motivated for your workouts at FitVibe. 
+For those of you in the fitness world, have you ever wanted to have a place where you could compete with others and become motivated to workout more?  FitVibe allows users to compete with others on the website through calories burned during your workout session.  With just a few clicks, you are able to see what type of workouts other users are doing, their calories burned, and the leaderboard.  You also are able to track your own progress with the personal past entries log. Come to compete, track and get motivated for your workouts at FitVibe. 
 
 FitVibeU1.jpg
 
