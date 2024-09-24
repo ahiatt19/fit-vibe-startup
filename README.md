@@ -27,7 +27,7 @@ Here is a sequence diagram that shows how two people would interact with the bac
 
 ### Technologies
 
-I am going to use the required technologies in the following ways.
+I used these technologies in the following ways.
 
 - **HTML** - Uses correct HTML structure for application. Two HTML pages. One for login page and one for creating an entry. 
 - **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
